@@ -1,0 +1,102 @@
+[gd_scene load_steps=9 format=3 uid="uid://dcm3jrctfyxj6"]
+
+[ext_resource type="Script" path="res://Scripts/button.gd" id="1_g6r8o"]
+[ext_resource type="Script" path="res://Scripts/button_salir.gd" id="2_5kngq"]
+[ext_resource type="Texture2D" uid="uid://do7pfbtuydt2y" path="res://Assets/3/Idle.png" id="3_83xr3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7i8a0"]
+atlas = ExtResource("3_83xr3")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75c2u"]
+atlas = ExtResource("3_83xr3")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjtos"]
+atlas = ExtResource("3_83xr3")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4s7kx"]
+atlas = ExtResource("3_83xr3")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t11hd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7i8a0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75c2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjtos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4s7kx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -9.0
+offset_right = 1175.0
+offset_bottom = 667.0
+color = Color(0.217626, 0.474313, 0.592627, 1)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 349.0
+offset_right = 1046.0
+offset_bottom = 428.0
+theme_override_font_sizes/font_size = 28
+text = "Jugar"
+script = ExtResource("1_g6r8o")
+
+[node name="ButtonSalir" type="Button" parent="Button"]
+layout_mode = 0
+offset_top = 154.0
+offset_right = 326.0
+offset_bottom = 233.0
+theme_override_font_sizes/font_size = 28
+text = "Salir"
+script = ExtResource("2_5kngq")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 293.0
+offset_right = 499.0
+offset_bottom = 644.0
+color = Color(0, 0.245764, 0.39018, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(360, 400)
+scale = Vector2(9, 9)
+sprite_frames = SubResource("SpriteFrames_t11hd")
+autoplay = "default"
+frame_progress = 0.460656
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color(0.145098, 0.247059, 0.294118, 1)
+layout_mode = 0
+offset_left = 148.0
+offset_top = 52.0
+offset_right = 1307.0
+offset_bottom = 220.0
+theme_override_font_sizes/normal_font_size = 130
+text = "GRAN JUEGO 2"
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button/ButtonSalir" to="Button" method="_on_button_salir_pressed"]
