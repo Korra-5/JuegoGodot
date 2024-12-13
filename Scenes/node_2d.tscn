@@ -203,7 +203,7 @@ region = Rect2(0, 18.9103, 97.9799, 18.1699)
 atlas = ExtResource("6_dnnvi")
 region = Rect2(0, 18.9103, 98.7699, 17.9065)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d4ftl"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_opbk8"]
 texture = ExtResource("3_hhh5v")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -264,6 +264,7 @@ texture = ExtResource("3_hhh5v")
 4:5/0 = 0
 5:5/0 = 0
 6:5/0 = 0
+6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:6/0 = 0
 1:6/0 = 0
 2:6/0 = 0
@@ -299,7 +300,7 @@ texture = ExtResource("3_hhh5v")
 
 [sub_resource type="TileSet" id="TileSet_mkgdu"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_d4ftl")
+sources/0 = SubResource("TileSetAtlasSource_opbk8")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1awcx"]
 size = Vector2(42, 24)
@@ -528,16 +529,16 @@ autoplay = "walk"
 position = Vector2(193, 19)
 shape = SubResource("CircleShape2D_wjmmv")
 
-[node name="Espada" type="Area2D" parent="."]
+[node name="Espada1" type="Area2D" parent="."]
 position = Vector2(788, -211)
 script = ExtResource("6_oioa2")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Espada"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Espada1"]
 position = Vector2(48.5, 8.75)
 scale = Vector2(0.59375, 0.609375)
 sprite_frames = SubResource("SpriteFrames_yqrfx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Espada"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Espada1"]
 position = Vector2(48, 9)
 shape = SubResource("CapsuleShape2D_sfer8")
 
@@ -606,7 +607,7 @@ shape = SubResource("CircleShape2D_wjmmv")
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Hiena/Area2D" to="Hiena" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Hiena/Area2D" to="Hiena/Area2D" method="_on_body_entered"]
-[connection signal="body_entered" from="Espada" to="Espada" method="_on_body_entered"]
+[connection signal="body_entered" from="Espada1" to="Espada1" method="_on_body_entered"]
 [connection signal="body_entered" from="World" to="World" method="_on_body_entered"]
 [connection signal="body_entered" from="Hiena2/Area2D" to="Hiena2" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Hiena2/Area2D" to="Hiena2/Area2D" method="_on_body_entered"]

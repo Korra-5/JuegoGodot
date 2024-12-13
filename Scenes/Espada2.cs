@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Espada : Area2D
+public partial class Espada2 : Area2D
 {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -19,7 +19,7 @@ public partial class Espada : Area2D
 		QueueFree();
 		GD.Print(sword);
 		
-		GetTree().ChangeSceneToFile("res://Scenes/segundoNivel.tscn");
+		GetTree().ChangeSceneToFile("res://Scenes/Fin.tscn");
 
 		
 	}
